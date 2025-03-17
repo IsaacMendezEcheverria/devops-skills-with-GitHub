@@ -5,6 +5,8 @@ format:
 	black *.py mylib/*.py
 
 lint:
+	# Install dependencies for linting
+	pip install fastapi pydantic uvicorn click wikipedia-api yake
 	# Run pylint
 	pylint --disable=R,C --extension-pkg-whitelist='pydantic' main.py --ignore-patterns=test_.*?py *.py mylib/*.py
 
